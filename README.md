@@ -3,7 +3,7 @@
 A beautiful, fully responsive flower shop website built with pure HTML, CSS, and JavaScript. No frameworks, no dependencies — just clean, handcrafted code.
 
 ## 🔗 Live Preview
-
+https://sheikhsiddique722-sketch.github.io/Bloom-web/
 Open `index.html` in your browser to view the site locally.
 
 ---
