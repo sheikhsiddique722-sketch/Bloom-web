@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cart — Bloom</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="cart.css">
+<style>
+:root{--ivory:#FFFDF8;--cream:#F8F1E7;--blush:#F7D6E6;--lavender:#C8B6FF;--rose:#F5B5D4;--purple:#7B61FF;--ink:#3a2c44;--ink-soft:#6b5b73;--display:'Fraunces',serif;--body:'Jost',sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--body);color:var(--ink);background:var(--ivory);overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:22px 6vw;background:rgba(255,253,248,.88);backdrop-filter:blur(20px);box-shadow:0 8px 40px rgba(123,97,255,.07)}
+.logo{font-family:var(--display);font-size:1.7rem;font-weight:600;display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink)}
+.logo b{color:var(--purple)}.logo .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(var(--rose),var(--lavender))}
+footer{background:var(--ink);color:#9b8aa3;padding:40px 6vw;text-align:center;font-size:.9rem;margin-top:60px}
+footer a{color:var(--lavender);text-decoration:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html"><span class="dot"></span> Bl<b>oo</b>m</a>
+  <a class="cart-link" href="cart.html">🛒 Cart <span id="cart-badge"></span></a>
+</nav>
+
+<div id="cart-toast"></div>
+
+<div class="cart-page">
+  <h1>Your <em>Cart</em></h1>
+  <p class="cart-subtitle" id="cart-count-text"></p>
+  <div id="cart-body"></div>
+</div>
+
+<footer>© 2026 Bloom. All rights reserved. | <a href="index.html">Continue Shopping</a></footer>
+
+<script src="cart.js"></script>
+<script>
+function renderCart() {
+  const cart = Cart.get();
+  const body = document.getElementById('cart-body');
+  const countText = document.getElementById('cart-count-text');
+
+  if (cart.items.length === 0) {
+    countText.textContent = '';
+    body.innerHTML = `
+      <div class="empty-cart">
+        <div class="empty-icon">🌸</div>
+        <h2>Aapka cart khali hai</h2>
+        <p>Koi item cart mein nahi hai. Humari collections explore karein!</p>
+        <a href="index.html" class="btn-shop">Collections Dekhein</a>
+      </div>`;
+    return;
+  }
+
+  countText.textContent = `${Cart.count()} item(s) cart mein hain`;
+
+  const itemsHtml = cart.items.map(item => `
+    <div class="cart-item">
+      <div class="item-img" style="background-image:url('${item.image}')"></div>
+      <div class="item-info">
+        <h3>${item.name}</h3>
+        <div class="item-unit-price">Rs. ${item.price.toLocaleString()} per item</div>
+      </div>
+      <div class="qty-controls">
+        <button class="qty-btn" onclick="changeQty('${item.id}',-1)">−</button>
+        <span class="qty-num">${item.quantity}</span>
+        <button class="qty-btn" onclick="changeQty('${item.id}',1)">+</button>
+      </div>
+      <div class="item-subtotal">Rs. ${(item.price * item.quantity).toLocaleString()}</div>
+      <button class="remove-btn" onclick="removeItem('${item.id}')" title="Remove">✕</button>
+    </div>`).join('');
+
+  const total = Cart.total();
+  const delivery = 0;
+
+  body.innerHTML = `
+    <div class="cart-layout">
+      <div class="cart-items">${itemsHtml}</div>
+      <div class="cart-summary">
+        <h3>Order Summary</h3>
+        <div class="summary-row"><span>Subtotal</span><span>Rs. ${total.toLocaleString()}</span></div>
+        <div class="summary-row"><span>Delivery</span><span style="color:#27ae60;font-weight:600">Free</span></div>
+        <div class="summary-row total"><span>Total</span><span>Rs. ${total.toLocaleString()}</span></div>
+        <button class="checkout-btn" onclick="checkout()">🌸 Checkout Karen</button>
+        <a href="index.html" class="continue-link">← Shopping jari rakhein</a>
+      </div>
+    </div>`;
+}
+
+function changeQty(id, delta) {
+  Cart.updateQty(id, delta);
+  renderCart();
+}
+
+function removeItem(id) {
+  Cart.remove(id);
+  renderCart();
+}
+
+function checkout() {
+  localStorage.removeItem('bloom-cart');
+  document.querySelector('.cart-page').innerHTML = `
+    <div class="success-msg">
+      <div class="success-icon">🌸</div>
+      <h2>Order Place Ho Gaya!</h2>
+      <p>Shukriya! Hamari team aapse jald hi rabta karegi aur delivery confirm karegi.</p>
+      <a href="index.html" class="btn-shop">Wapas Jain</a>
+    </div>`;
+  document.getElementById('cart-badge').style.display = 'none';
+}
+
+renderCart();
+</script>
+</body>
+</html>

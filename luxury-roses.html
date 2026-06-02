@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury Roses — Bloom</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="cart.css">
+<style>
+:root{--ivory:#FFFDF8;--cream:#F8F1E7;--blush:#F7D6E6;--lavender:#C8B6FF;--rose:#F5B5D4;--purple:#7B61FF;--ink:#3a2c44;--ink-soft:#6b5b73;--display:'Fraunces',serif;--body:'Jost',sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--body);color:var(--ink);background:var(--ivory);overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:22px 6vw;background:rgba(255,253,248,.88);backdrop-filter:blur(20px);box-shadow:0 8px 40px rgba(123,97,255,.07)}
+.logo{font-family:var(--display);font-size:1.7rem;font-weight:600;display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink)}
+.logo b{color:var(--purple)}.logo .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(var(--rose),var(--lavender))}
+.nav-right{display:flex;gap:12px;align-items:center}
+.back-btn{padding:10px 22px;border-radius:30px;border:1.5px solid rgba(123,97,255,.35);background:transparent;color:var(--purple);font-family:var(--body);font-size:.9rem;text-decoration:none;transition:.3s}
+.back-btn:hover{background:var(--purple);color:#fff}
+.hero{height:520px;position:relative;display:flex;align-items:flex-end;padding:50px 6vw;margin-top:70px;overflow:hidden}
+.hero-img{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(to top,rgba(58,44,68,.75),rgba(58,44,68,.15))}
+.hero-text{position:relative;z-index:2;color:#fff}
+.hero-text span{font-size:.82rem;letter-spacing:.28em;text-transform:uppercase;opacity:.85}
+.hero-text h1{font-family:var(--display);font-size:clamp(2.2rem,5vw,3.8rem);font-weight:400;line-height:1.05;margin:10px 0 14px}
+.hero-text h1 em{font-style:italic;color:var(--rose)}
+.hero-text p{font-size:1.05rem;opacity:.9;max-width:500px}
+.section{padding:80px 6vw;max-width:1240px;margin:0 auto}
+.section-head{margin-bottom:50px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.8rem;letter-spacing:.28em;text-transform:uppercase;color:var(--purple);margin-bottom:14px;font-weight:500}
+.eyebrow::before{content:"❀";color:var(--rose)}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.1;margin-bottom:14px}
+h2 em{font-style:italic;color:var(--purple)}.lead{color:var(--ink-soft);font-size:1.05rem}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.card{border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 16px 40px rgba(123,97,255,.1);transition:transform .4s,box-shadow .4s}
+.card:hover{transform:translateY(-8px);box-shadow:0 28px 60px rgba(123,97,255,.2)}
+.card-img{height:220px;background-size:cover;background-position:center}
+.card-body{padding:22px}
+.card-body h3{font-family:var(--display);font-weight:500;font-size:1.2rem;margin-bottom:6px}
+.card-body p{color:var(--ink-soft);font-size:.9rem;margin-bottom:14px}
+.price{font-family:var(--display);font-size:1.3rem;color:var(--purple);font-weight:600}
+.add-btn{width:100%;margin-top:14px;padding:12px;border-radius:28px;border:none;cursor:pointer;background:linear-gradient(120deg,var(--purple),var(--rose));color:#fff;font-family:var(--body);font-size:.95rem;font-weight:500;transition:.3s}
+.add-btn:hover{opacity:.88;transform:translateY(-2px)}
+footer{background:var(--ink);color:#9b8aa3;padding:40px 6vw;text-align:center;font-size:.9rem}
+footer a{color:var(--lavender);text-decoration:none}
+@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:580px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="index.html"><span class="dot"></span> Bl<b>oo</b>m</a>
+  <div class="nav-right">
+    <a class="back-btn" href="index.html">← Back</a>
+    <a class="cart-link" href="cart.html">🛒 Cart <span id="cart-badge"></span></a>
+  </div>
+</nav>
+<div id="cart-toast"></div>
+<div class="hero">
+  <img class="hero-img" src="assests/luxury-roses.jpg" alt="Luxury Roses">
+  <div class="hero-overlay"></div>
+  <div class="hero-text">
+    <span>Bloom Collections</span>
+    <h1>Luxury <em>Roses</em></h1>
+    <p>Our signature statement blooms — rare, refined, and radiantly beautiful.</p>
+  </div>
+</div>
+<div class="section">
+  <div class="section-head">
+    <span class="eyebrow">Luxury Collection</span>
+    <h2>Roses of the finest <em>quality</em></h2>
+    <p class="lead">Sourced from the world's finest growers, our luxury roses are chosen for their exceptional size, fragrance, and lasting beauty.</p>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-img" style="background-image:url('assests/luxury-roses.jpg')"></div>
+      <div class="card-body"><h3>Signature Red Roses</h3><p>Hand-selected long-stem red roses — the pinnacle of elegance.</p><div class="price">Rs. 5,500</div><button class="add-btn" data-id="lr1" data-name="Signature Red Roses" data-price="5500" data-img="assests/luxury-roses.jpg">Add to Cart</button></div>
+    </div>
+    <div class="card">
+      <div class="card-img" style="background-image:url('assests/birthdaybouqat.jpg')"></div>
+      <div class="card-body"><h3>Pink Avalanche</h3><p>Premium pink roses arranged in a cascading bouquet style.</p><div class="price">Rs. 4,800</div><button class="add-btn" data-id="lr2" data-name="Pink Avalanche" data-price="4800" data-img="assests/birthdaybouqat.jpg">Add to Cart</button></div>
+    </div>
+    <div class="card">
+      <div class="card-img" style="background-image:url('assests/weeding-image.avif')"></div>
+      <div class="card-body"><h3>White Majesty</h3><p>Pure white garden roses — sophisticated and breathtaking.</p><div class="price">Rs. 5,200</div><button class="add-btn" data-id="lr3" data-name="White Majesty" data-price="5200" data-img="assests/weeding-image.avif">Add to Cart</button></div>
+    </div>
+    <div class="card">
+      <div class="card-img" style="background-image:url('assests/Seasonal-Collection.jpg')"></div>
+      <div class="card-body"><h3>Purple Passion</h3><p>Rare purple roses for those who appreciate the extraordinary.</p><div class="price">Rs. 6,500</div><button class="add-btn" data-id="lr4" data-name="Purple Passion" data-price="6500" data-img="assests/Seasonal-Collection.jpg">Add to Cart</button></div>
+    </div>
+    <div class="card">
+      <div class="card-img" style="background-image:url('assests/inniversory-gift.jpg')"></div>
+      <div class="card-body"><h3>Peach Parfait</h3><p>Soft peach and cream roses — warm, romantic, and unique.</p><div class="price">Rs. 4,200</div><button class="add-btn" data-id="lr5" data-name="Peach Parfait" data-price="4200" data-img="assests/inniversory-gift.jpg">Add to Cart</button></div>
+    </div>
+    <div class="card">
+      <div class="card-img" style="background-image:url('assests/Custom-Arrangements.jpg')"></div>
+      <div class="card-body"><h3>Luxury Rose Box</h3><p>50 premium roses in a signature Bloom luxury hat box.</p><div class="price">Rs. 12,000</div><button class="add-btn" data-id="lr6" data-name="Luxury Rose Box" data-price="12000" data-img="assests/Custom-Arrangements.jpg">Add to Cart</button></div>
+    </div>
+  </div>
+</div>
+<footer>© 2026 Bloom. All rights reserved. | <a href="index.html">Back to Home</a></footer>
+<script src="cart.js"></script>
+</body>
+</html>

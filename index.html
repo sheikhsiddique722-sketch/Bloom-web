@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bloom — Where Every Flower Tells a Story</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="cart.css">
+</head>
+<body>
+
+<!-- Loader -->
+<div id="loader">
+  <div class="loader-flower"><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="loader-text">Bloom</div>
+</div>
+
+<div id="glow"></div>
+<div id="petals"></div>
+<div id="cart-toast"></div>
+
+<!-- Nav -->
+<nav id="nav">
+  <div class="logo"><span class="dot"></span> Bl<b>oo</b>m</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#collections">Collections</a></li>
+    <li><a href="#why">Why Bloom</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div style="display:flex;gap:12px;align-items:center">
+    <button class="nav-cta">Order Now</button>
+    <a class="nav-cart" href="cart.html">🛒 Cart <span id="cart-badge"></span></a>
+  </div>
+  <div class="burger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="hero-grid">
+    <div class="hero-text reveal">
+      <span class="hero-eyebrow">Where Every Flower Tells a Story</span>
+      <h1>Bloom Your<br>Beautiful <em>Moments</em></h1>
+      <p class="sub">Handcrafted floral arrangements designed to celebrate love, joy, and life's most meaningful occasions.</p>
+      <div class="hero-btns">
+        <button class="btn-primary">Explore Collection</button>
+        <button class="btn-ghost">Order Now</button>
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <div class="bouquet">
+        <div class="fl fl1"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="fl fl2"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="fl fl3"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="fl fl4"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      </div>
+      <div class="glass-stat gs1"><b>10k+</b><small>Bouquets Delivered</small></div>
+      <div class="glass-stat gs2"><b>4.9★</b><small>Customer Rating</small></div>
+    </div>
+  </div>
+</header>
+
+<!-- About -->
+<section class="about section-pad" id="about">
+  <div class="wrap about-grid">
+    <div class="about-visual reveal">
+      <div class="fl a1"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="fl a2"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="fl a3"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="float-card fc1">🌿 Sourced <b>Fresh Daily</b></div>
+      <div class="float-card fc2">✨ <b>Handcrafted</b> with love</div>
+    </div>
+    <div class="about-text reveal">
+      <span class="eyebrow">Our Story</span>
+      <h2 class="title">Floral artistry, born from a <em>love of beauty</em></h2>
+      <p class="lead">At Bloom, flowers are more than gifts — they are emotions made visible. Every petal we choose carries a passion for craft, and every arrangement is composed by hand to feel as personal as the moment it celebrates.</p>
+      <div class="about-points">
+        <div class="about-point"><div class="ic">🌸</div><div><h4>A Passion for Flowers</h4><p>Decades of floral artistry distilled into every bouquet we create.</p></div></div>
+        <div class="about-point"><div class="ic">🤍</div><div><h4>Handcrafted Arrangements</h4><p>Designed by master florists, never mass-produced.</p></div></div>
+        <div class="about-point"><div class="ic">🌷</div><div><h4>Premium Flower Selection</h4><p>Only the finest seasonal blooms, sourced fresh each morning.</p></div></div>
+        <div class="about-point"><div class="ic">🎁</div><div><h4>Personalized Gifting</h4><p>Custom notes, packaging, and touches as unique as your story.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Collections -->
+<section class="section-pad" id="collections">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="eyebrow">Featured Collections</span>
+      <h2 class="title">Bouquets for every <em>occasion</em></h2>
+      <p class="lead">Curated arrangements to mark the moments that matter most.</p>
+    </div>
+    <div class="coll-grid">
+      <article class="coll-card reveal" onclick="location.href='wedding.html'"><div class="coll-bg" style="background-image:url('assests/weeding-image.avif')"></div><div class="coll-overlay"></div><div class="coll-glass"><h3>Wedding Flowers</h3><span>Timeless elegance for your big day</span><br><button class="coll-explore">Explore <span class="arr">→</span></button></div></article>
+      <article class="coll-card reveal" onclick="location.href='birthday.html'"><div class="coll-bg" style="background-image:url('assests/birthdaybouqat.jpg')"></div><div class="coll-overlay"></div><div class="coll-glass"><h3>Birthday Bouquets</h3><span>Joyful blooms to celebrate</span><br><button class="coll-explore">Explore <span class="arr">→</span></button></div></article>
+      <article class="coll-card reveal" onclick="location.href='anniversary.html'"><div class="coll-bg" style="background-image:url('assests/inniversory-gift.jpg')"></div><div class="coll-overlay"></div><div class="coll-glass"><h3>Anniversary Gifts</h3><span>Romance in full bloom</span><br><button class="coll-explore">Explore <span class="arr">→</span></button></div></article>
+      <article class="coll-card reveal" onclick="location.href='luxury-roses.html'"><div class="coll-bg" style="background-image:url('assests/luxury-roses.jpg')"></div><div class="coll-overlay"></div><div class="coll-glass"><h3>Luxury Roses</h3><span>Our signature statement blooms</span><br><button class="coll-explore">Explore <span class="arr">→</span></button></div></article>
+      <article class="coll-card reveal" onclick="location.href='seasonal.html'"><div class="coll-bg" style="background-image:url('assests/Seasonal-Collection.jpg')"></div><div class="coll-overlay"></div><div class="coll-glass"><h3>Seasonal Collection</h3><span>Nature's freshest of the moment</span><br><button class="coll-explore">Explore <span class="arr">→</span></button></div></article>
+      <article class="coll-card reveal" onclick="location.href='custom.html'"><div class="coll-bg" style="background-image:url('assests/Custom-Arrangements.jpg')"></div><div class="coll-overlay"></div><div class="coll-glass"><h3>Custom Arrangements</h3><span>Designed entirely around you</span><br><button class="coll-explore">Explore <span class="arr">→</span></button></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- Why -->
+<section class="why section-pad" id="why">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="eyebrow">Why Choose Bloom</span>
+      <h2 class="title">The Bloom <em>difference</em></h2>
+      <p class="lead">A floral experience crafted with intention, from stem to doorstep.</p>
+    </div>
+    <div class="why-grid">
+      <div class="feat-card reveal"><div class="feat-ic">🌼</div><h4>Fresh Daily Flowers</h4><p>Hand-picked each morning so every petal arrives at its peak.</p></div>
+      <div class="feat-card reveal"><div class="feat-ic">🚚</div><h4>Same Day Delivery</h4><p>Order before noon and surprise someone today.</p></div>
+      <div class="feat-card reveal"><div class="feat-ic">🎀</div><h4>Premium Packaging</h4><p>Wrapped in signature Bloom finery, ready to gift.</p></div>
+      <div class="feat-card reveal"><div class="feat-ic">💌</div><h4>Personalized Notes</h4><p>Hand-written messages to carry your words with the flowers.</p></div>
+      <div class="feat-card reveal"><div class="feat-ic">🎨</div><h4>Handcrafted Designs</h4><p>Every arrangement composed by an expert florist's hand.</p></div>
+      <div class="feat-card reveal"><div class="feat-ic">🛡️</div><h4>Quality Guarantee</h4><p>Seven-day freshness promise on every order, always.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section-pad">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="eyebrow">Loved by Many</span>
+      <h2 class="title">Stories from our <em>community</em></h2>
+    </div>
+    <div class="tcarousel reveal">
+      <div class="ttrack" id="ttrack">
+        <div class="tcard"><div class="stars">★★★★★</div><p>"The most breathtaking bouquet I've ever received. Bloom turned my anniversary into pure magic."</p><div class="tperson"><div class="avatar">A</div><div><b>Amara Sheikh</b><small>Karachi</small></div></div></div>
+        <div class="tcard"><div class="stars">★★★★★</div><p>"Same-day delivery saved my mother's birthday. The arrangement was beyond elegant."</p><div class="tperson"><div class="avatar">R</div><div><b>Rohan Mehta</b><small>Lahore</small></div></div></div>
+        <div class="tcard"><div class="stars">★★★★★</div><p>"Every detail, from packaging to the handwritten note, felt thoughtful and luxurious."</p><div class="tperson"><div class="avatar">S</div><div><b>Sara Khan</b><small>Islamabad</small></div></div></div>
+        <div class="tcard"><div class="stars">★★★★★</div><p>"Our wedding florals were a dream. Guests are still talking about them months later."</p><div class="tperson"><div class="avatar">L</div><div><b>Layla Ahmed</b><small>Dubai</small></div></div></div>
+        <div class="tcard"><div class="stars">★★★★★</div><p>"I order from Bloom for every occasion now. Consistently stunning, never disappoints."</p><div class="tperson"><div class="avatar">F</div><div><b>Faisal Noor</b><small>Karachi</small></div></div></div>
+        <div class="tcard"><div class="stars">★★★★★</div><p>"The custom arrangement perfectly captured the mood I described. True artistry."</p><div class="tperson"><div class="avatar">N</div><div><b>Nadia Iqbal</b><small>London</small></div></div></div>
+      </div>
+    </div>
+    <div class="tdots" id="tdots"></div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="section-pad" id="gallery">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="eyebrow">Floral Experience</span>
+      <h2 class="title">A gallery of <em>blooms</em></h2>
+      <p class="lead">Moments of beauty, captured petal by petal.</p>
+    </div>
+    <div class="gallery">
+      <div class="gitem g1 reveal"><div class="gbg" style="background-image:url('assests/birthdaybouqat.jpg')"></div><span class="glabel">Signature Bouquets</span></div>
+      <div class="gitem g2 reveal"><div class="gbg" style="background-image:url('assests/luxury-roses.jpg')"></div><span class="glabel">Luxury Roses</span></div>
+      <div class="gitem g3 reveal"><div class="gbg" style="background-image:url('assests/inniversory-gift.jpg')"></div><span class="glabel">Gift Boxes</span></div>
+      <div class="gitem g4 reveal"><div class="gbg" style="background-image:url('assests/weeding-image.avif')"></div><span class="glabel">Event Decorations</span></div>
+      <div class="gitem g5 reveal"><div class="gbg" style="background-image:url('assests/Seasonal-Collection.jpg')"></div><span class="glabel">Seasonal Blooms</span></div>
+      <div class="gitem g6 reveal"><div class="gbg" style="background-image:url('assests/Custom-Arrangements.jpg')"></div><span class="glabel">Luxury Arrangements</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta reveal">
+  <h2>Make Every Moment <em>Bloom</em></h2>
+  <p>Send beauty, love, and happiness with every bouquet.</p>
+  <button class="btn-primary">Order Your Flowers Today</button>
+</section>
+
+<!-- Contact -->
+<section class="section-pad" id="contact">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="eyebrow">Get in Touch</span>
+      <h2 class="title">Let's create something <em>beautiful</em></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="ci-item"><div class="ic">📞</div><div><h4>Phone</h4><p>+92 300 123 4567</p></div></div>
+        <div class="ci-item"><div class="ic">✉️</div><div><h4>Email</h4><p>hello@bloomflowers.com</p></div></div>
+        <div class="ci-item"><div class="ic">📍</div><div><h4>Store Location</h4><p>24 Garden Avenue, Clifton, Karachi</p></div></div>
+        <div class="ci-item"><div class="ic">🌐</div><div><h4>Follow Us</h4>
+          <div class="socials"><a href="#">In</a><a href="#">Fb</a><a href="#">Pi</a><a href="#">Tw</a></div></div></div>
+      </div>
+      <div class="contact-form reveal">
+        <div class="field"><input type="text" required><label>Your Name</label></div>
+        <div class="field"><input type="email" required><label>Email Address</label></div>
+        <div class="field"><input type="text" required><label>Subject</label></div>
+        <div class="field"><textarea required></textarea><label>Your Message</label></div>
+        <button class="btn-primary">Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="logo"><span class="dot"></span> Bl<b>oo</b>m</div>
+      <p>Where every flower tells a story. Handcrafted floral arrangements for life's most meaningful moments.</p>
+    </div>
+    <div class="foot-col"><h5>Quick Links</h5><a href="#about">About</a><a href="#collections">Collections</a><a href="#why">Why Bloom</a><a href="#gallery">Gallery</a></div>
+    <div class="foot-col"><h5>Collections</h5><a href="wedding.html">Wedding</a><a href="birthday.html">Birthday</a><a href="anniversary.html">Anniversary</a><a href="luxury-roses.html">Luxury Roses</a></div>
+    <div class="foot-col"><h5>Connect</h5><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">Pinterest</a><a href="#">Twitter</a></div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Bloom. All rights reserved.</span>
+    <span>Made with 🌸 &amp; love</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="cart.js"></script>
+</body>
+</html>
