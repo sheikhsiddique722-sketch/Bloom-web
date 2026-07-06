@@ -76,7 +76,7 @@ The cart uses `localStorage` to save items across pages:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/bloom-web.git
+   git clone https://github.com/sheikhsiddique722-sketch/Bloom-web.git
    ```
 2. Open `index.html` in any browser — no build step needed.
 
@@ -88,12 +88,6 @@ The cart uses `localStorage` to save items across pages:
 - CSS3 (custom properties, grid, flexbox, animations)
 - Vanilla JavaScript (IntersectionObserver, localStorage)
 - Google Fonts (Fraunces + Jost)
-
----
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
